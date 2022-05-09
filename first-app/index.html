@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyScript</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <py-env>
+        - numpy
+        - matplotlib
+        - paths:
+          - /data.py
+    </py-env>
+  </head>
+  <body>
+    <b><p>Today is <u><label id='today'></label></u></p></b>
+    <hr>
+    <py-script>
+import matplotlib.pyplot as plt
+import numpy as np
+import datetime as dt
+pyscript.write('today', dt.date.today().strftime('%A %B %d, %Y'))
+<!-- print('Hello, World!')
+x_axis = []
+y_axis = [] -->
+<!-- for i in range(-20, 21): 
+    print(i) 
+    x_axis.append(i)
+    y_axis.append(i*i) -->
+
+x, y = make_x_and_y(n = 100)
+
+<!-- fig1, ax1 = plt.subplots()
+ax1.scatter(x_axis, y_axis)
+fig1 -->
+
+fig2, ax2 = plt.subplots()
+ax2.scatter(x, y)
+fig2
+
+    </py-script>
+  </body>
+</html>
